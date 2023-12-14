@@ -1,51 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Gloria Tattah</title>
+        <meta charset="UTF-8" />
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div class="body">
-            <div id="navbar">
-                <a id="link1" href="">Home</a>
+        <div class="body1">
+            <div class="main">
+            <nav id="navbar" class="header scroll-up scroll-down">
+                <a class="hmln" id="link1" href=""><p id="tl1">Home</p></a>
                 <div id="lng1">
-                    <a  class="link1" href="#bio">About</a>
-                    <a class="link1" href="">Blog</a>
-                    <a class="link1" href="">Pharmacy</a>
-                    <a  class="link1" href="#bottomSection">Contact</a>
+                    <a  class="link1" href="#bio"><p id="tl1">About</p></a>
+                    <a class="link1" href=""><p id="tl1">Blog</p></a>
+                    <a class="link1" href=""><p id="tl1">Pharmacy</p></a>
+                    <a  class="link1" href="#bottomSection"><p id="tl1">Contact</p></a>
                 </div>
-            </div>
+            </nav>
             <div id="mainContent">
                 <div id="bio">
             <div id="bioMain">
+            
             <p>
-                I am Gloria Afoa Tattah, A pharmacist, enthusiast and a business woman.<br>
-                I am an Alumni of the University of Ghana and a proud member of the <br>
-                Ghana Association of Pharmacist. I am currently an employee of Zipline Ghana.<br>
+                <div id="hi"><p>Hi,</p></div>
+                I am Gloria Afoa Tattah, a pharmacist, a business enthusiast and a dedicated<br>
+                healthcare  expert. I am an Alumni of the University of Ghana and a proud member of  <br>
+                the Ghana Association of Pharmacists. I am currently an employee of Zipline Ghana.<br>
             </p>
            </div>
-            <img id="img00" src="src/Gloria1.jpg" alt="Picture" height="800px" width="700px"/>
-                </div>
-              <div>
-                <div id="qualification">
-                  <p>
-                    University of Ghana: Bsc. Pharmacy
-                  </p>
-                </div>
-                <div id="workExperience">
-                   <p>
-                    Zipline Ghana
-                   </p>
-                </div>
-            </div>
-                <div id="quotes">
-                      <p>
-                        Love what you do!<br>
-                        <p></p><p>~ Gloria A. Tattah</p>
-                      </p>
+           <div id="quotesMain">
+           
+        
+          
+            <div id="quotes">
+                <p>
+                 I am dedicated to providing the best pharmacist<br>
+                 services and I will stop at nothing to make sure<br>
+                 drugs are dispensed in the most efficient and secure <br>
+                 way.
+                </p>
+                <p>
+                 I believe that drugs must be dispensed and used in<br>
+                 the right way and for the purposes they are <br>
+                 manufactured for. <br>
+                 Join me on my mision to reduce Drug abuse and self Medication <br>
+                 #SayNoToDrugAbuse
+                 #SayNoToSelfMedication
+                 Feel free to contact me for more info 
+                </p>
+          </div>
+            </div>        
+        </img>
+
+        <div id="messageMain">
+          <label id="label" for="email">Send me an Email:</label>
+          <textarea cols="40" rows="50" type="email" id="email" placeholder="Enter your email" ></textarea>
+          <button id="emailButton" onclick="storeEmail()">Send</button>
+      </div>
                 </div>
 
-            </div>
+            
+                
+
+
+                  
+
             <div id="bottomSection">
                 <div id="b1">
                    <a class="link1">Instagram</a>
@@ -62,9 +81,34 @@
                     God is good
                 </div>
             </div>
+          </div>
         </div>
         <script>
+               let userEmail = '';
 
+function storeEmail() {
+    const emailInput = document.getElementById('email');
+    userEmail = emailInput.value; 
+    alert('Email stored: ' + userEmail); 
+}
+const body = document.body;
+const header = document.querySelector("header");
+const main = document.querySelector("main");
+const headerHeight = document.querySelector("header").offsetHeight;
+main.style.top = headerHeight + "px";
+let lastScroll = 0;
+window.addEventListener("scroll", () => {
+  let currentScroll = window.pageYOffset;
+  if (currentScroll - lastScroll > 0) {
+    header.classList.add("scroll-down");
+    header.classList.remove("scroll-up");
+  } else {
+    // scrolled up -- header show
+    header.classList.add("scroll-up");
+    header.classList.remove("scroll-down");
+  }
+  lastScroll = currentScroll;
+})
         </script>
     </body>
 </html>
